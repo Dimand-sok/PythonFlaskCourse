@@ -1,4 +1,5 @@
-from app import app
+from app import app, app_factory, DevConfig
+
 
 current_app=app_factory(app, config=DevConfig)
 
