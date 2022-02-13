@@ -11,6 +11,7 @@ class TagModel(Base, BaseModel):
     __tablename__ = "tags"
 
     name = Column(String(64))
+    slush = Column(String(64))
     description = Column(String(264))
 
     def __init__(self, schema):
@@ -20,3 +21,5 @@ class TagModel(Base, BaseModel):
         for key, value in schema.items():
             if hasattr(self, key) and getattr(self, key) != value:
                 setattr(self, key, value)
+                
+        self.slush(schema.get("name"))
