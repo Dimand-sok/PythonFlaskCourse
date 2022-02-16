@@ -5,7 +5,7 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_DB: 'forum_db'
+      POSTGRES_DB: 'pythonflaskcourse_db'
       POSTGRES_PASSWORD: 'postgres'
     ports:
       - "5432:5432"
