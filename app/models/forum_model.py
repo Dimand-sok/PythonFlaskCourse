@@ -4,7 +4,6 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
 from app.database import Base
-
 from .base_model import BaseModel
 
 
@@ -13,7 +12,8 @@ class ForumModel(Base, BaseModel):
     __tablename__ = "forum"
 
     title = Column(String(64))
-    descrciption = Column(String(250))
+    description = Column(String(250))
+    slush = Column(String(128))
 
     replies = relationship("ReplyModel", backref="forum", lazy=True)
 
