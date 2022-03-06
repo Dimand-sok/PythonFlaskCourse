@@ -27,6 +27,7 @@ def update_reply(reply_id):
 
         redirect_url = f"{url_for('static_route.home')}{current_reply.forum.slush}"
         return redirect(redirect_url)
+        
 
     if not current_reply:
         abort(404)
@@ -49,3 +50,4 @@ def delete_reply(reply_id):
     session.commit()
 
     return redirect(redirect_url)
+  

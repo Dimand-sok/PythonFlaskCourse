@@ -16,7 +16,7 @@ def home():
 
 
 #display single forum based on slush
-@static_route.route("</slush>", methods=["GET"])
+@static_route.route("/<slush>", methods=["GET"])
 def single_forum(slush):
     forum=session.query(ForumModel).filter(ForumModel.slush == slush).one_or_none()
     if not forum:
